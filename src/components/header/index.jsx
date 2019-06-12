@@ -28,10 +28,10 @@ class Header extends Component {
     let path = this.props.location.pathname
     let title
     menuList.forEach(item => {
-      if (item.key === path) {
+      if (item.key === path || path.indexOf(item.key) === 0) {
         title = item.title
       } else if (item.children) {
-        const cItem = item.children.find(cItem => cItem.key === path)
+        const cItem = item.children.find(cItem => cItem.key === path || path.indexOf(cItem.key) === 0)
         if (cItem) {
           title = cItem.title
         }
