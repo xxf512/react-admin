@@ -29,7 +29,18 @@ export const reqSeachProducts = ({pageSize, pageNum, seachType, seachName}) => a
 export const reqDeleteImg = (name) => ajax(BASE + '/manage/img/delete', {name}, 'POST')
 // 添加/更新商品
 export const reqAddOrUpdateProduct = (product) => ajax(BASE + '/manage/product/' + (product._id ? 'update' : 'add'), product, 'POST')
-
+// 获取角色列表
+export const reqRoles = () => ajax(BASE + '/manage/role/list')
+// 添加角色
+export const reqAddRole = (roleName) => ajax(BASE + '/manage/role/add', {roleName}, 'POST')
+// 添加角色
+export const reqUpdateRole = (role) => ajax(BASE + '/manage/role/update', role, 'POST')
+// 获取用户列表
+export const reqUsers = () => ajax(BASE + '/manage/user/list')
+// 删除用户
+export const reqDelUser = (userId) => ajax(BASE + '/manage/user/delete', {userId}, 'POST')
+// 添加用户
+export const reqAddOrUpdateuser = (user) => ajax(BASE + '/manage/user/' + (user._id ? 'update' : 'add'), user, 'POST')
 // 获取天气的jsonp请求
 export const reqWeather = (city) => {
   const url = `http://api.map.baidu.com/telematics/v3/weather?location=${city}&output=json&ak=3p49MVra6urFRGOT9s8UBWr2`
