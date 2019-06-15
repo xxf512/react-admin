@@ -12,6 +12,7 @@ import { Redirect, Route, Switch} from 'react-router-dom'
 // import Bar from '../charts/bar'
 // import Line from '../charts/line'
 // import Pie from '../charts/pie'
+// import Pie from '../charts/pie'
 import Routers from '../../config/menuConfig'
 const { Footer, Sider, Content } = Layout
 
