@@ -6,6 +6,7 @@ import User from '../pages/user/user'
 import Bar from '../pages/charts/bar'
 import Line from '../pages/charts/line'
 import Pie from '../pages/charts/pie'
+// import NotFound from '../pages/not-found/not-found'
 // import memoryUtils from '../utils/memoryUtils'
 // const {user} = memoryUtils
 // console.log(memoryUtils ? memoryUtils.user : 'wer')

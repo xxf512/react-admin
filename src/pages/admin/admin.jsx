@@ -4,15 +4,15 @@ import { Layout, message } from 'antd'
 import Header from '../../components/header'
 import LeftNav from '../../components/left-nav'
 import { Redirect, Route, Switch} from 'react-router-dom'
-// import Home from '../home/home'
-// import Category from '../category/category'
-// import Product from '../product/product'
-// import Role from '../role/role'
-// import User from '../user/user'
-// import Bar from '../charts/bar'
-// import Line from '../charts/line'
-// import Pie from '../charts/pie'
-// import Pie from '../charts/pie'
+import Home from '../home/home'
+import Category from '../category/category'
+import Product from '../product/product'
+import Role from '../role/role'
+import User from '../user/user'
+import Bar from '../charts/bar'
+import Line from '../charts/line'
+import Pie from '../charts/pie'
+import NotFound from '../not-found/not-found'
 import Routers from '../../config/menuConfig'
 const { Footer, Sider, Content } = Layout
 
@@ -36,6 +36,10 @@ export default class Admin extends PureComponent {
     )
   }
 
+  componentWillMount () {
+    //  this.rounte = this.initRouter(Routers)
+  }
+
   render() {
     const user = memoryUtils.user
     if (!user || !user._id) {
@@ -50,7 +54,8 @@ export default class Admin extends PureComponent {
           <Header>Header</Header>
           <Content style={{backgroundColor: '#fff', margin: 20}}>
             <Switch>
-              {/* <Route path='/home' component={Home}/>
+              <Redirect exact from='/' to='/home' />
+              <Route path='/home' component={Home}/>
               <Route path='/category' component={Category}/>
               <Route path='/product' component={Product}/>
               <Route path='/role' component={Role}/>
@@ -58,11 +63,10 @@ export default class Admin extends PureComponent {
               <Route path='/charts/bar' component={Bar}/>
               <Route path='/charts/line' component={Line}/>
               <Route path='/charts/pie' component={Pie}/>
-              <Redirect to='/home' /> */}
-              {
-                this.initRouter(Routers)
-              }
-              <Redirect to='/home' />
+              {/* {
+                this.rounte
+              } */}
+              <Route component={NotFound} />
             </Switch>
           </Content>
           <Footer style={{textAlign: 'center', color: '#ccc'}}>推荐使用谷歌浏览器，可以获得更佳浏览体验</Footer>
